@@ -1,129 +1,90 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>arakunn</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body, html {
-    font-family: Comic Sans MS, sans-serif;
-    scroll-behavior: smooth;
-    text-transform: lowercase;
-}
+<!-- parallax header -->
+<section class="parallax">
+    <div class="overlay">
+        <h1 data-translate>arakunn</h1>
+    </div>
+</section>
 
-.parallax {
-    background-image: url('https://images.unsplash.com/photo-1636827001898-53208629c7bb?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    height: 400px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+<!-- language selector -->
+<div style="text-align:center;">
+    <label for="langSelect">choose your language:</label>
+    <select id="langSelect">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="zh">Chinese</option>
+    </select>
+</div>
 
-.parallax .overlay {
-    background-color: rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-}
+<!-- tabs -->
+<div class="tabs">
+    <button class="tab-btn active" data-tab="home" data-translate>home</button>
+    <button class="tab-btn" data-tab="projects" data-translate>current and past projects</button>
+    <button class="tab-btn" data-tab="social" data-translate>social</button>
+</div>
 
-.parallax h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
+<!-- tab content -->
+<div class="tab-content">
+    <div id="home" class="tab-panel active">
+        <h2 data-translate>home</h2>
+        <p data-translate>hi! welcome to my website. this is purely a passion project and is a test of what i can do with html, css and javascript. the site is quite barebones as of now, but that will change as time goes on.</p>
+    </div>
 
-.parallax p {
-    font-size: 1.5em;
-}
+    <div id="projects" class="tab-panel">
+        <h2 data-translate>projects</h2>
+        <p data-translate>obviously, i have this website as a project, but i am working on some other things</p>
+        <p> </p>
+        <p>arakunn.com / arakunn.github.io</p>
+        <p> </p>
+        <p data-translate>in may/june of 2025, i built a computer and named it Project ARISE. it is my current pc to this day.</p>
+        <p data-translate>it has a 9070 xt, 9600x and 32gb of ddr5 ram. it is housed in the montech king 95 pro case.</p>
+    </div>
 
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    flex-wrap: wrap;
-}
+    <div id="social" class="tab-panel">
+        <h2 data-translate>social</h2>
+        <p data-translate>you can find me on:</p>
+        <div class="social-embed">
+            <ul class="social-links">
+                <li>
+                    <a href="https://github.com/arakunn/" target="_blank" aria-label="github">
+                        <!-- github svg -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 ..."/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/@arakun_0" target="_blank" aria-label="youtube">
+                        <!-- youtube svg -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a2.998 ..."/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discordapp.com/users/1056215622440202321" target="_blank" aria-label="discord">
+                        <!-- discord svg -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.369a19.791 ..."/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-.tab-btn {
-    padding: 10px 20px;
-    border: none;
-    background-color: #eee;
-    cursor: pointer;
-    margin: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
-
-.tab-btn.active, .tab-btn:hover {
-    background-color: #3498db;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.tab-content {
-    max-width: 800px;
-    margin: 0 auto 50px;
-    padding: 20px;
-    min-height: 150px;
-    position: relative;
-}
-
-/* tab panels */
-.tab-panel {
-    display: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.tab-panel.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* social links */
-.social-embed {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.social-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 10px;
-    padding: 0;
-}
-
-.social-links a {
-    text-decoration: none;
-    color: #3498db;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    transition: transform 0.3s, background-color 0.3s, color 0.3s;
-}
-
-.social-links a:hover {
-    background-color: #3498db;
-    color: #fff;
-    transform: scale(1.2);
-}
-
-.social-links svg {
-    width: 24px;
-    height: 24px;
-}
+<script src="script.js"></script>
+</body>
+</html>
