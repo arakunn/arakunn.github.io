@@ -66,7 +66,7 @@ body, html {
     border-radius: 5px;
 }
 
-/* tab content */
+/* tab content with fade effect */
 .tab-content {
     max-width: 800px;
     margin: 0 auto 50px;
@@ -74,7 +74,6 @@ body, html {
     position: relative;
 }
 
-/* fade effect */
 .tab-panel {
     opacity: 0;
     visibility: hidden;
@@ -90,7 +89,6 @@ body, html {
     visibility: visible;
     position: relative;
 }
-
 
 /* social links */
 .social-links {
