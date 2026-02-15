@@ -42,7 +42,7 @@ body, html {
     font-size: 1.5em;
 }
 
-/* tabs */
+/* tabs styling */
 .tabs {
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@ body, html {
     border-radius: 5px;
 }
 
-/* tab content with fade effect */
+/* tab content */
 .tab-content {
     max-width: 800px;
     margin: 0 auto 50px;
@@ -77,8 +77,9 @@ body, html {
 .tab-panel {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
     transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: relative;
 }
 
 .tab-panel.active {
@@ -88,19 +89,28 @@ body, html {
 }
 
 /* social links */
+.social-embed {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .social-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 25px;
     margin-top: 10px;
+    padding: 0;
 }
 
 .social-links a {
     text-decoration: none;
     color: #3498db;
-    transition: color 0.3s;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .social-links a:hover {
     color: #1d6fa5;
+    transform: scale(1.2);
 }
