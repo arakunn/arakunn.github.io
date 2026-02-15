@@ -54,7 +54,7 @@ body, html {
     cursor: pointer;
     margin: 5px;
     font-size: 1em;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .tab-btn.active, .tab-btn:hover {
@@ -119,6 +119,11 @@ body, html {
     transform: scale(1.2);
 }
 
+.social-links svg {
+    width: 24px;
+    height: 24px;
+}
+
 /* language selector */
 #langSelect {
     padding: 8px 12px;
@@ -138,4 +143,24 @@ body, html {
 /* data-translate styling */
 [data-translate] {
     transition: color 0.3s, background-color 0.3s;
+}
+
+/* visitor counter styling */
+#visitor-counter {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: default;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#visitor-counter:hover {
+    transform: scale(1.1);
 }
