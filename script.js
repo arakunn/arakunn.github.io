@@ -2,8 +2,7 @@ const tabs = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.tab-panel');
 const headerText = document.querySelector('.parallax h1');
 
-/* header typing */
-const typeText = "arakunn";
+const typeText = "welcome to arakunn";
 let index = 0;
 headerText.textContent = "";
 function typeHeader() {
@@ -15,10 +14,10 @@ function typeHeader() {
 }
 typeHeader();
 
-/* tabs switching */
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         if(tab.classList.contains('active')) return;
+
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
 
@@ -35,7 +34,6 @@ tabs.forEach(tab => {
     });
 });
 
-/* scroll reveal for panels not active */
 function revealOnScroll() {
     panels.forEach(panel => {
         if(panel.classList.contains('active')) return;
