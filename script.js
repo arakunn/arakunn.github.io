@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const langSelect = document.getElementById('langSelect');
 
     // header typing
-
     const typeText = "arakunn";
     let index = 0;
     headerText.textContent = "";
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     typeHeader();
 
     // tab switching
-
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             if (tab.classList.contains('active')) return;
@@ -38,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // scroll reveal
-
     function revealOnScroll() {
         panels.forEach(panel => {
             if (panel.classList.contains('active')) return;
@@ -60,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('load', revealOnScroll);
 
     // translation using MyMemory API
-
     async function translateText(text, targetLang) {
         try {
             const response = await fetch(
@@ -89,5 +85,24 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+    // visitor counter using localStorage
+    const counterEl = document.createElement('div');
+    counterEl.id = 'visitor-counter';
+    counterEl.style.position = 'fixed';
+    counterEl.style.bottom = '10px';
+    counterEl.style.right = '10px';
+    counterEl.style.backgroundColor = '#3498db';
+    counterEl.style.color = '#fff';
+    counterEl.style.padding = '5px 10px';
+    counterEl.style.borderRadius = '5px';
+    counterEl.style.fontSize = '0.9em';
+    document.body.appendChild(counterEl);
+
+    if (!localStorage.getItem('visited')) {
+        localStorage.setItem('visited', 'true');
+    }
+
+    counterEl.innerText = localStorage.getItem('visited') ? "Visitors: 1+" : "Visitors: 1";
 
 });
