@@ -6,7 +6,8 @@ arakunn.com is hosted by IONOS and the contract ends on the 14th of February, 20
 This website uses HTML, CSS and JavaScript.
 
 # This is currently what arakunn.com looks like 
-<img width="2554" height="1355" alt="image" src="https://github.com/user-attachments/assets/e43f7591-bfe6-4026-9cdf-5c1d0b4ed974" />
+<img width="2559" height="1357" alt="image" src="https://github.com/user-attachments/assets/45217729-0684-4495-b890-7d8d7c00690d" />
+
 
 
 # Status of website 
