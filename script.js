@@ -2,7 +2,8 @@ const tabs = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.tab-panel');
 const headerText = document.querySelector('.parallax h1');
 
-const typeText = "welcome to arakunn's website";
+/* header typing */
+const typeText = "arakunn";
 let index = 0;
 headerText.textContent = "";
 function typeHeader() {
@@ -14,6 +15,7 @@ function typeHeader() {
 }
 typeHeader();
 
+/* tabs switching */
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         if(tab.classList.contains('active')) return;
@@ -21,19 +23,16 @@ tabs.forEach(tab => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
 
-        const current = document.querySelector('.tab-panel.active');
-        current.classList.remove('active');
-        current.style.opacity = 0;
+        panels.forEach(panel => {
+            panel.classList.remove('active'); // hide all
+        });
 
         const next = document.getElementById(tab.dataset.tab);
-        next.classList.add('active');
-        next.style.opacity = 0;
-        setTimeout(() => {
-            next.style.opacity = 1;
-        }, 50);
+        next.classList.add('active'); // show only selected
     });
 });
 
+/* scroll reveal for non-active panels */
 function revealOnScroll() {
     panels.forEach(panel => {
         if(panel.classList.contains('active')) return;
