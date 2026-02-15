@@ -2,7 +2,7 @@ const tabs = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.tab-panel');
 const headerText = document.querySelector('.parallax h1');
 
-/* header typing effect */
+/* header typing */
 const typeText = "arakunn";
 let index = 0;
 headerText.textContent = "";
@@ -24,7 +24,7 @@ tabs.forEach(tab => {
         tab.classList.add('active');
 
         panels.forEach(panel => {
-            panel.classList.remove('active'); // hide all panels
+            panel.classList.remove('active'); // hide all
         });
 
         const next = document.getElementById(tab.dataset.tab);
