@@ -2,7 +2,7 @@ const tabs = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.tab-panel');
 const headerText = document.querySelector('.parallax h1');
 
-const typeText = "welcome to arakunn";
+const typeText = "welcome to arakunn's website";
 let index = 0;
 headerText.textContent = "";
 function typeHeader() {
