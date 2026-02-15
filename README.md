@@ -12,4 +12,4 @@ This website uses HTML, CSS and JavaScript.
 Under works, please wait
 
 # How long until the website contract ends?
-<table width="100%" border='0' cellspacing="0" cellpadding="0"><tr><td align="center"><img src="https://i.countdownmail.com/4u7inj.gif" style="display:inline-block!important;width:100%!important;max-width:276px!important;" border="0" alt="countdownmail.com"/></td></tr></table>
+<table width="100%" border='0' cellspacing="0" cellpadding="0"><tr><td align="center"><img src="https://i.countdownmail.com/4u7inj.gif" style="display:inline-block!important;width:100%!important;max-width:1098px!important;" border="0" alt="countdownmail.com"/></td></tr></table>
