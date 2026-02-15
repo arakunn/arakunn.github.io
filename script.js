@@ -23,12 +23,9 @@ tabs.forEach(tab => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
 
-        panels.forEach(panel => {
-            panel.classList.remove('active'); // hide all
-        });
-
+        panels.forEach(panel => panel.classList.remove('active'));
         const next = document.getElementById(tab.dataset.tab);
-        next.classList.add('active'); // show selected panel
+        next.classList.add('active');
     });
 });
 
@@ -47,6 +44,32 @@ function revealOnScroll() {
         }
     });
 }
-
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
+
+/* translation feature using LibreTranslate */
+async function translateText(text, targetLang) {
+    const response = await fetch('https://libretranslate.com/translate', {
+        method: 'POST',
+        body: JSON.stringify({
+            q: text,
+            source: 'en',
+            target: targetLang
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
+    const data = await response.json();
+    return data.translatedText;
+}
+
+const langSelect = document.getElementById('langSelect');
+langSelect.addEventListener('change', async (e) => {
+    const lang = e.target.value;
+    const elements = document.querySelectorAll('[data-translate]');
+    for(const el of elements){
+        const original = el.getAttribute('data-original') || el.innerText;
+        const translated = await translateText(original, lang);
+        el.innerText = translated;
+        el.setAttribute('data-original', original);
+    }
+});
