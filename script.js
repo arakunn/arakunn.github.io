@@ -33,6 +33,8 @@ typeHeader();
 // scroll reveal for tab panels
 function revealOnScroll() {
     panels.forEach(panel => {
+        if(panel.classList.contains('active')) return; // skip active panel
+
         const top = panel.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
