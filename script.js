@@ -3,7 +3,7 @@ const panels = document.querySelectorAll('.tab-panel');
 const headerText = document.querySelector('.parallax h1');
 
 /* header typing */
-const typeText = "welcome to arakunn";
+const typeText = "arakunn";
 let index = 0;
 headerText.textContent = "";
 function typeHeader() {
@@ -35,7 +35,7 @@ tabs.forEach(tab => {
     });
 });
 
-/* scroll reveal */
+/* scroll reveal for panels not active */
 function revealOnScroll() {
     panels.forEach(panel => {
         if(panel.classList.contains('active')) return;
