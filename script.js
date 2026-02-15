@@ -2,7 +2,7 @@ const tabs = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.tab-panel');
 const headerText = document.querySelector('.parallax h1');
 
-/* header typing */
+/* header typing effect */
 const typeText = "arakunn";
 let index = 0;
 headerText.textContent = "";
@@ -15,7 +15,7 @@ function typeHeader() {
 }
 typeHeader();
 
-/* tabs switching */
+/* tab switching */
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         if(tab.classList.contains('active')) return;
@@ -24,11 +24,11 @@ tabs.forEach(tab => {
         tab.classList.add('active');
 
         panels.forEach(panel => {
-            panel.classList.remove('active'); // hide all
+            panel.classList.remove('active'); // hide all panels
         });
 
         const next = document.getElementById(tab.dataset.tab);
-        next.classList.add('active'); // show only selected
+        next.classList.add('active'); // show selected panel
     });
 });
 
