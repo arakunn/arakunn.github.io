@@ -5,7 +5,7 @@
 }
 
 body, html {
-    font-family: Comic Sans MS, sans-serif;
+    font-family: Arial, sans-serif;
     scroll-behavior: smooth;
     text-transform: lowercase;
 }
@@ -71,26 +71,20 @@ body, html {
     max-width: 800px;
     margin: 0 auto 50px;
     padding: 20px;
-    position: relative;
     min-height: 150px;
 }
 
 .tab-panel {
     opacity: 0;
-    visibility: hidden;
+    display: none;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
 }
 
 .tab-panel.active {
     opacity: 1;
-    visibility: visible;
+    display: block;
     transform: translateY(0);
-    position: relative;
 }
 
 .social-embed {
@@ -130,4 +124,3 @@ body, html {
     width: 24px;
     height: 24px;
 }
-
