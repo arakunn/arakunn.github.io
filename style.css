@@ -5,7 +5,7 @@
 }
 
 body, html {
-    font-family: Arial, sans-serif;
+    font-family: Comic Sans MS, sans-serif;
     scroll-behavior: smooth;
     text-transform: lowercase;
 }
@@ -124,3 +124,4 @@ body, html {
     width: 24px;
     height: 24px;
 }
+
