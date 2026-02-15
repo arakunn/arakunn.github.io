@@ -49,7 +49,7 @@ window.addEventListener('load', revealOnScroll);
 
 /* translation feature using LibreTranslate */
 async function translateText(text, targetLang) {
-    const response = await fetch('https://libretranslate.com/translate', {
+    const response = await fetch('https://translate.argosopentech.com/translate', {
         method: 'POST',
         body: JSON.stringify({
             q: text,
