@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>arakunn</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>arakunn</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>arakunn</h1>
-    <p>placeholder</p>
+
+<!-- parallax header -->
+<section class="parallax">
+    <div class="overlay">
+        <h1>welcome to arakunn</h1>
+        <p>my personal website</p>
+    </div>
+</section>
+
+<!-- tabs -->
+<div class="tabs">
+    <button class="tab-btn active" data-tab="home">home</button>
+    <button class="tab-btn" data-tab="about">about</button>
+    <button class="tab-btn" data-tab="projects">projects</button>
+    <button class="tab-btn" data-tab="social">social</button>
+</div>
+
+<!-- tab content -->
+<div class="tab-content">
+    <div id="home" class="tab-panel active">
+        <h2>home</h2>
+        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. phasellus vehicula justo eget diam posuere sollicitudin.</p>
+    </div>
+    <div id="about" class="tab-panel">
+        <h2>about</h2>
+        <p>curabitur blandit tempus porttitor. integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+    </div>
+    <div id="projects" class="tab-panel">
+        <h2>projects</h2>
+        <p>maecenas faucibus mollis interdum. aenean lacinia bibendum nulla sed consectetur. lorem ipsum dolor sit amet.</p>
+    </div>
+    <div id="social" class="tab-panel">
+        <h2>social</h2>
+        <p>connect with me:</p>
+        <ul class="social-links">
+            <li><a href="#" target="_blank">twitter</a></li>
+            <li><a href="#" target="_blank">github</a></li>
+            <li><a href="#" target="_blank">linkedin</a></li>
+            <li><a href="#" target="_blank">instagram</a></li>
+        </ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
