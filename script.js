@@ -17,7 +17,7 @@ tabs.forEach(tab => {
 });
 
 // typing effect for header
-const typeText = "welcome to arakunn";
+const typeText = "arakunn";
 let index = 0;
 headerText.textContent = "";
 
