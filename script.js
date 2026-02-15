@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const typeText = "arakunn";
     let index = 0;
     headerText.textContent = "";
-
     function typeHeader() {
         if (index < typeText.length) {
             headerText.textContent += typeText.charAt(index);
@@ -17,19 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(typeHeader, 100);
         }
     }
-
     typeHeader();
 
     // tab switching
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             if (tab.classList.contains('active')) return;
-
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-
             panels.forEach(panel => panel.classList.remove('active'));
-
             const next = document.getElementById(tab.dataset.tab);
             next.classList.add('active');
         });
@@ -39,10 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function revealOnScroll() {
         panels.forEach(panel => {
             if (panel.classList.contains('active')) return;
-
             const top = panel.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-
             if (top < windowHeight - 50) {
                 panel.style.opacity = 1;
                 panel.style.transform = "translateY(0)";
@@ -52,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
 
@@ -73,11 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
     langSelect.addEventListener('change', async (e) => {
         const lang = e.target.value;
         const elements = document.querySelectorAll('[data-translate]');
-
         for (const el of elements) {
             const original = el.getAttribute('data-original') || el.innerText;
             el.setAttribute('data-original', original);
-
             if (lang === 'en') {
                 el.innerText = original;
             } else {
@@ -86,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // visitor counter using localStorage
+    // visitor counter using CountAPI
     const counterEl = document.createElement('div');
     counterEl.id = 'visitor-counter';
     counterEl.style.position = 'fixed';
@@ -97,12 +87,17 @@ document.addEventListener("DOMContentLoaded", function () {
     counterEl.style.padding = '5px 10px';
     counterEl.style.borderRadius = '5px';
     counterEl.style.fontSize = '0.9em';
+    counterEl.innerText = 'Visitors: 0';
     document.body.appendChild(counterEl);
 
-    if (!localStorage.getItem('visited')) {
-        localStorage.setItem('visited', 'true');
-    }
-
-    counterEl.innerText = localStorage.getItem('visited') ? "Visitors: 1+" : "Visitors: 1";
+    fetch('https://api.countapi.xyz/hit/arakunn/visits')
+        .then(res => res.json())
+        .then(data => {
+            counterEl.innerText = "Visitors: " + data.value;
+        })
+        .catch(err => {
+            console.error('Counter error:', err);
+            counterEl.innerText = "Visitors: ?";
+        });
 
 });
