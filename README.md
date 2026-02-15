@@ -1,7 +1,8 @@
-# arakunn.github.io
+# arakunn.github.io / arakunn.com
 This is a just a website for myself, and you can access it at either arakunn.github.io or arakunn.com
 
 arakunn.com is hosted by IONOS and the contract ends on the 14th of February, 2027.
+
 This website uses HTML, CSS and JavaScript.
 
 # This is currently what arakunn.com looks like 
